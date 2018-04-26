@@ -1,0 +1,34 @@
+{
+  "response": [
+    {
+      "id": 1,
+      "title": "United Arab Emirates",
+      "author": "Burj Al Arab",
+      "image": "http://johnnyflores.net/wp-content/uploads/2018/03/travel13_picture.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Santorini",
+      "author": "Charisma Suites",
+      "image": "http://johnnyflores.net/wp-content/uploads/2018/03/travel14_picture.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Constance",
+      "author": "Constance Belle",
+      "image": "http://johnnyflores.net/wp-content/uploads/2018/03/travel15_picture.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Maldivas",
+      "author": "Reethi Rah",
+      "image": "http://johnnyflores.net/wp-content/uploads/2018/03/travel16_picture.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Riviera Maya",
+      "author": "Azul Beach Resort",
+      "image": "http://johnnyflores.net/wp-content/uploads/2018/03/travel19_picture.jpg"
+    }
+  ]
+}
