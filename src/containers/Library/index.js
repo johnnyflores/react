@@ -1,5 +1,8 @@
 // Dependencies
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import ArrowBackIcon from 'material-ui/svg-icons/navigation/arrow-back';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -9,6 +12,12 @@ import * as actions from './actions';
 
 // Utils
 import { isFirstRender } from '../../lib/utils/frontend';
+
+import Avatar from 'material-ui/Avatar';
+import {List, ListItem} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+import Divider from 'material-ui/Divider';
+import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 
 class Library extends Component {
   static propTypes = {
@@ -71,7 +80,11 @@ class Library extends Component {
         <h1>{book.title}</h1>
         <p>Autor: {book.author}</p>
         <p><img src={book.image} style={{ maxWidth: '300px' }} /></p>
-        <p><Link to="/library">Go back</Link></p>
+        <MuiThemeProvider>
+          <Link to="/library">
+            <RaisedButton label="Go back" primary={true} icon={<ArrowBackIcon />} />
+          </Link>
+        </MuiThemeProvider>
       </div>
     );
   }
@@ -79,19 +92,25 @@ class Library extends Component {
   renderBooksList(books) {
     return (
       <div>
-        <h1>Library</h1>
-
-        <ul>
-          {
-            books.map((book, key) => {
-              return (
-                <li key={key}>
-                  <Link to={`/library/${book.id}`}>{book.title}</Link> - {book.author}
-                </li>
-              )
-            })
-          }
-        </ul>
+        <MuiThemeProvider>
+          <List>
+            <Subheader>Library</Subheader>
+            {
+              books.map((book, key) => {
+                return (
+                  <div key={key}>
+                    <Link to={`/library/${book.id}`}>
+                      <ListItem
+                        primaryText={book.author}
+                        leftAvatar={<Avatar src={book.image} />}
+                      />
+                    </Link>
+                  </div>
+                )
+              })
+            }
+          </List>
+        </MuiThemeProvider>
       </div>
     );
   }
